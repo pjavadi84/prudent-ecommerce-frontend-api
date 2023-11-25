@@ -1,3 +1,10 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust the minmax values as per your design */
+    grid-gap: 20px; /* Space between grid items */
+    padding: 20px; /* Padding around the entire grid */
+}
+
 /* Styles for the overall container */
 .category-container {
     border: 1px solid #ccc; /* Adds a border */
@@ -34,3 +41,4 @@
     border-radius: 4px; /* Slightly rounds the corners of the images */
     margin-top: 10px; /* Adds space above each image */
 }
+

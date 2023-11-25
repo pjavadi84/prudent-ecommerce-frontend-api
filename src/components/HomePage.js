@@ -35,7 +35,7 @@ const HomePage = () => {
     return (
         <div>
             <h2>Home Page</h2>
-            <div>
+            <div className="grid-container" >
                 {categories.map((category) => (
                     <CategoryDetails 
                         key={category.id} 
