@@ -12,7 +12,6 @@ const HomePage = () => {
             try {
                 const response = await axios.get('http://localhost:3000/category_module/categories');
                 setCategories(response.data); // Assuming response.data is an array of categories
-                debugger
                 setIsLoading(false);
             } catch (error) {
                 console.error("Error fetching categories", error);
