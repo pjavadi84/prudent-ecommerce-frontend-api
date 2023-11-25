@@ -1,0 +1,36 @@
+/* Styles for the overall container */
+.category-container {
+    border: 1px solid #ccc; /* Adds a border */
+    padding: 15px; /* Adds some padding inside the container */
+    margin: 10px 0; /* Adds some space around each container */
+    border-radius: 8px; /* Rounds the corners of the border */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a subtle shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    cursor: pointer; /* Changes the cursor to indicate it's clickable */
+}
+
+/* Hover effect for the container */
+.category-container:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Increases shadow on hover */
+}
+
+/* Styles for the category name */
+.category-name {
+    color: #333; /* Darker text color for the category name */
+    margin-bottom: 10px; /* Space below the category name */
+}
+
+/* Styles for the category details */
+.category-details {
+    font-size: 14px; /* Smaller font size for details */
+    color: #555; /* Lighter text color for details */
+    line-height: 1.6; /* Adjust line spacing for better readability */
+}
+
+/* Styles for the images */
+.category-details img {
+    max-width: 100%; /* Ensures images are not bigger than the container */
+    height: auto; /* Keeps the image aspect ratio */
+    border-radius: 4px; /* Slightly rounds the corners of the images */
+    margin-top: 10px; /* Adds space above each image */
+}
