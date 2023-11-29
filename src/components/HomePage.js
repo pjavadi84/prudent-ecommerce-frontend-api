@@ -1,50 +1,52 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import CategoryDetails from './CategoryDetails';
+import CategoryPage from './CategoryPage';
 
 const HomePage = () => {
-    const [categories, setCategories] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
+  const [allPages, setAllPages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    useEffect(() => {
-        const fetchCategories = async () => {
-            try {
-                const response = await axios.get('http://localhost:3000/category_module/categories');
-                setCategories(response.data); // Assuming response.data is an array of categories
-                setIsLoading(false);
-            } catch (error) {
-                console.error("Error fetching categories", error);
-                setError(error);
-                setIsLoading(false);
-            }
-        };
+  useEffect(() => {
+    // Fetch the list of pages or components you want to render on the homepage
+    // You can use Axios or any other method to fetch this data
 
-        fetchCategories();
-    }, []); // Removed the dependency on categories
+    const fetchAllPages = async () => {
+      try {
+        // Simulating fetching pages
+        const pages = [
+          <CategoryPage />,
+          // Add more pages or components as needed
+        ];
 
-    const handleCategoryClick = (category) => {
-        // Logic for what happens when a category is clicked
-        console.log('Category clicked:', category);
+        setAllPages(pages);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>Error loading categories!</div>;
+    fetchAllPages();
+  }, []);
 
-    return (
-        <div>
-            <h2>Home Page</h2>
-            <div className="grid-container" >
-                {categories.map((category) => (
-                    <CategoryDetails 
-                        key={category.id} 
-                        category={category} 
-                        onClick={handleCategoryClick}
-                    />
-                ))}
-            </div>
-        </div>
-    );
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error loading pages: {error.message}</div>;
+  }
+
+  return (
+    <div>
+      <h2>Welcome to Prudent Scales Systems</h2>
+      <div className="grid-container">
+        {allPages.map((page, index) => (
+          <div key={index}>{page}</div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default HomePage;
