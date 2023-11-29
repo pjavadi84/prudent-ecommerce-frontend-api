@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import CategoryPage from './components/CategoryPage';
 import CategoryDetails from './components/CategoryDetails';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './components/Navbar';
 
 // import ProductPage from './components/ProductPage';
 // import LoginPage from './components/LoginPage';
@@ -13,6 +15,7 @@ import CategoryDetails from './components/CategoryDetails';
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route exact path="/categories" component={CategoryPage} />
